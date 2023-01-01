@@ -1,7 +1,6 @@
 const { DiscordTogether } = require('discord-together');
-const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder } = require("@discordjs/builders");
-const Discord = require("discord.js");
-const { ButtonStyle } = require('discord.js');
+const { SlashCommandBuilder } = require("@discordjs/builders");
+const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -11,7 +10,7 @@ module.exports = {
     async execute(interaction, client) {
         if(interaction.member.voice.channel) {
             client.discordTogether = new DiscordTogether(client);
-            client.discordTogether.createTogetherCode(interaction.member.voice.channel.id, 'youtube').then(async invite => {
+            client.discordTogether.createTogetherCode(interaction.member.voice.channelId, 'youtube').then(async invite => {
                 return interaction.reply({
                     embeds: [
                         new EmbedBuilder()
