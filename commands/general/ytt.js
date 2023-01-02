@@ -4,7 +4,7 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("activity_ytt")
+        .setName("youtube")
         .setDescription("YouTubeTogetherを開始する"),
 
     async execute(interaction, client) {
