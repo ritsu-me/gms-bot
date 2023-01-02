@@ -24,7 +24,7 @@ module.exports = {
     async execute(i, client) {
         if(!i.user.id.match(config.dev.developer))return;
         const inputUser = i.options.getString("user");
-        if(!inputUser.match(/\d{10,20}/))return i.reply({//引数がID出ない場合処理をはじく
+        if(!inputUser.match(/\d{10,20}/))return i.reply({//引数がIDでない場合処理をはじく
             embeds: [
                 new EmbedBuilder()
                 .setTitle("BAN失敗")
